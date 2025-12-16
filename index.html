@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Click pra Otário</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="texto">Cliques: 0</h1>
+    <button id="botao">Clique aqui</button>
+
+    <script>
+        let contador = 0;
+        const texto = document.getElementById("texto");
+        const botao = document.getElementById("botao");
+
+        botao.addEventListener("click", () => {
+            contador++;
+
+            if (contador === 60) {
+                texto.innerText = "PERDEU O SEU TEMPO";
+                botao.disabled = true;
+            } else {
+                texto.innerText = "Cliques: " + contador;
+            }
+        });
+    </script>
+
+</body>
+</html>
